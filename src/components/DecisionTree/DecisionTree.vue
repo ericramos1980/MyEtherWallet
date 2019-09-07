@@ -1,8 +1,9 @@
 <template>
   <div class="decision-tree">
+    <button class="toggle-button" @click="toggle">Toggle</button>
     <b-modal
       ref="decisionTree"
-      class="decision-tree-b0d9aec139522ad935781f979276e90e"
+      class="decision-tree-modal-b0d9aec139522ad935781f979276e90e"
       hide-footer
       hide-header
       centered
@@ -47,7 +48,11 @@ export default {
   mounted() {
     this.$refs.decisionTree.show();
   },
-  methods: {}
+  methods: {
+    toggle() {
+      this.$refs.decisionTree.toggle();
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>
@@ -55,7 +60,7 @@ export default {
 </style>
 
 <style lang="scss">
-.decision-tree-b0d9aec139522ad935781f979276e90e {
+.decision-tree-modal-b0d9aec139522ad935781f979276e90e {
   .modal-dialog {
     position: absolute;
     right: 100px;
